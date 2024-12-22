@@ -1,0 +1,33 @@
+.row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .row button {
+    padding: 18px 12px;
+    border-radius:10px;
+    border: none;
+    outline: none;
+    background: rgb(89, 89, 236);
+    color: white;
+    font-weight: bold;
+    font-size:18px;
+    cursor: pointer;
+    transition:300ms;
+  }
+  .row button:hover {
+    transform: scale(0.99);
+    opacity:0.8;
+  }
+  .row.clear button ,.row.equal button{
+      grid-column: span 3;
+      background:rgb(96, 234, 96);
+      padding:25px 0;
+  }
+  .row.clear button{
+      background: red;
+  }
+  .row .plus , .row .minus{
+      background: orange;
+  }

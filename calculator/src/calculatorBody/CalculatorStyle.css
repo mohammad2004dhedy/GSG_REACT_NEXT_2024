@@ -1,0 +1,8 @@
+.calculator {
+  width: 320px;
+  background: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
