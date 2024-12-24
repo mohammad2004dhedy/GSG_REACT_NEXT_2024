@@ -1,0 +1,74 @@
+.Todo-item {
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0px 2px 7px 0px #666666c2;
+  background: #e5e5e5;
+  padding: 18px 50px;
+  position: relative;
+  overflow: hidden;
+}
+.Todo-item input[type="checkbox"] {
+  position: absolute;
+  left:55px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.Todo-item span.isUrgent {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background: rgb(21, 213, 136);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow:0px 0 5px #000000b0;
+}
+.Todo-item.urgent span.isUrgent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Todo-item.done span.title {
+  text-decoration: line-through;
+  color: #666666c2;
+  white-space: wrap;
+}
+.Todo-item .delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 40px;
+  height: 100%;
+}
+.Todo-item svg {
+  color: red;
+  cursor: pointer;
+  font-size: 20px;
+}
+.Todo-item svg:hover {
+  animation: shake linear 0.3s;
+  animation-iteration-count: 1;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

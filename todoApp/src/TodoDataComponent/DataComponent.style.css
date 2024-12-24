@@ -1,0 +1,20 @@
+.data-component{
+    display: flex;
+    gap:1rem;
+    margin:0 0 20px;
+    align-items: center;
+    justify-content: center;
+    padding:10px;
+    flex-wrap: wrap;
+}
+.data-component .Data{
+    width:30%;
+    min-width:130px;
+    background: #e5e5e5;
+    box-shadow:0 0 2px #404040b6;
+    padding:20px 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction:column;
+    gap:6px;
+}

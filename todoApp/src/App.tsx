@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import DateBanner from "./Date/DateBanner.component.tsx";
+import FormComponent from "./FormComponent/FormComponent.component.tsx";
+import TodoData from "./TodoDataComponent/TodoData.component.tsx";
+import ToDoItems from "./ToDoItems/ToDoItems.component.tsx";
+import { useState } from "react";
+import { Itodo } from "./assets/ItodoData.ts";
+import "./App.css";
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [IdCounter, setIdcounter] = useState<number>(0);
+  const [tasksData, settodoData] = useState<Array<Itodo>>([]);
+  function addNewTask(newTask: Itodo) {
+    settodoData([...tasksData, { ...newTask, id: IdCounter }]);
+    setIdcounter(IdCounter + 1);
+  }
+  function setTaskDone(id: number) {
+    const index: number = tasksData.findIndex((t) => t.id === id);
+    const newTasksData: Array<Itodo> = [...tasksData];
+    newTasksData[index].isDone = !newTasksData[index].isDone;
+    settodoData(newTasksData);
+  }
+  function deleteTask(id: number) {
+    const index:number = tasksData.findIndex((task) => task.id === id);
+    const newTasksData: Array<Itodo> = [...tasksData];
+    newTasksData.splice(index, 1);
+    settodoData(newTasksData);
+  }
+  const numberOFTasks: number = tasksData.length;
+  const numberOfDoneTasks: number = tasksData.filter(
+    (task) => task.isDone
+  ).length;
+  const numberOfUrgentTasks: number = tasksData.filter(
+    (task) => task.isUrgent
+  ).length;
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <DateBanner />
+      <FormComponent onAddTask={addNewTask} />
+      <TodoData
+        tasksNumber={numberOFTasks}
+        doneTasks={numberOfDoneTasks}
+        urgentTasks={numberOfUrgentTasks}
+      />
+      <ToDoItems items={[...tasksData]} onComplete={setTaskDone} onDelete={deleteTask}/>
+    </div>
+  );
 }
 
-export default App
+export default App;
