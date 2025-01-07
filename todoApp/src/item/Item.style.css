@@ -24,7 +24,7 @@
   color: white;
   font-size: 20px;
   font-weight: bold;
-  box-shadow:0`px 0 5px #000000b0;
+  box-shadow:0px 0 5px #000000b0;
 }
 .Todo-item.urgent span.isUrgent {
   display: flex;
