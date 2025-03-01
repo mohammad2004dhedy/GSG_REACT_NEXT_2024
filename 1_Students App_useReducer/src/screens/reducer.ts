@@ -30,7 +30,7 @@ const reducer = (state: Istate, action: Action): Istate => {
     case "ADD_STUDENT":
       {
         const newStd = action.payload;
-        return { ...state, studentsList: [...state.studentsList, newStd] };
+        return { ...state, studentsList: [...state.studentsList, newStd ] };
       }
       break;
     case "HANDLE_ABSENTS":
