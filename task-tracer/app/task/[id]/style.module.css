@@ -1,0 +1,64 @@
+.page {
+  background: #737373;
+  min-height: 100vh;
+  padding: 100px 15px 15px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 1200px;
+  gap: 25px;
+  position: relative;
+}
+.title {
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 2;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: normal;
+}
+.completed {
+  background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 30px;
+  margin-top: -20px;
+  color: red;
+}
+.completed.done {
+  color: green;
+}
+
+.id {
+  background: white;
+  border-radius: 50%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 255, 42);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn {
+  background: white;
+  color: #545454;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.copy{
+  background: white;
+  color: black;
+  padding: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}

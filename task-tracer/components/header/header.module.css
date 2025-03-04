@@ -1,0 +1,10 @@
+.header{
+    padding:10px 30px;
+    background:#545454;
+    color: white;
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
